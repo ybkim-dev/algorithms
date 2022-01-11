@@ -4,13 +4,13 @@ def main():
     num = []
     for i in range(len(input_string)):
         num.append(int(input_string[i]))
-    # 첫, 두번째 인자들이 1이하 혹은 0이라면(음수는 없다고 하므로) + 연산 둘다 양 값이라면 * 연산을 하는 것이 최대
+    # 첫, 두번째 인자들이 1이하 혹은 0이라면(음수는 없다고 하므로) + 연산 둘다 1이상의 값이라면 * 연산을 하는 것이 최대
     # greedy : 곱하기 연산을 최대로 하게 만들어야 함. 곱하기 연산이 더하기 연산보다 숫자를 키우는데 효과적임이 자명.
     first = num[0]
     for i in range(1, len(num)):
-        if first == 0 or num[i] == 0:
+        if first <= 1 or num[i] <= 1:
             first += num[i]
-        elif first !=0 and num[i] != 0:
+        else:
             first *= num[i]
     print(first)
 
