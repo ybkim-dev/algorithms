@@ -19,7 +19,7 @@ def bfs(x, y):
     visited[0][0] = True
     while queue:
         v = queue.popleft()
-        # queue가 비었을 때 --> 1개 phase가 끝났을 때 count += 1
+
         for i in range(4):
             nx = v[0] + dx[i]
             ny = v[1] + dy[i]
